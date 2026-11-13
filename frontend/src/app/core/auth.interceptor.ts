@@ -1,0 +1,3 @@
+import { HttpInterceptorFn } from '@angular/common/http';
+import { catchError,throwError } from 'rxjs';
+export const authInterceptor:HttpInterceptorFn=(req,next)=>{const token=localStorage.getItem('northstar_token')||sessionStorage.getItem('northstar_token');const request=token?req.clone({setHeaders:{Authorization:`Bearer ${token}`,Accept:'application/json'}}):req.clone({setHeaders:{Accept:'application/json'}});return next(request).pipe(catchError(error=>{if(error.status===401&&token){localStorage.removeItem('northstar_token');sessionStorage.removeItem('northstar_token');window.location.assign('/');}return throwError(()=>error)}));};

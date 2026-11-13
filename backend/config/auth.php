@@ -1,0 +1,2 @@
+<?php
+return ['defaults'=>['guard'=>env('AUTH_GUARD','web'),'passwords'=>'admins'],'guards'=>['web'=>['driver'=>'session','provider'=>'admins'],'api'=>['driver'=>'sanctum','provider'=>'admins']],'providers'=>['admins'=>['driver'=>'eloquent','model'=>App\Models\User::class]],'passwords'=>['admins'=>['provider'=>'admins','table'=>'password_reset_tokens','expire'=>60,'throttle'=>60]],'password_timeout'=>10800];

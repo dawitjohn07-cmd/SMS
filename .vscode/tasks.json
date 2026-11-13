@@ -1,0 +1,11 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Inspect project",
+			"type": "shell",
+			"command": "Get-ChildItem -Force; Write-Output '--- files ---'; rg --files -g '!node_modules' -g '!venv' -g '!__pycache__' | Select-Object -First 200; Write-Output '--- env ---'; if (Test-Path backend\\.env) { Get-Content backend\\.env }",
+			"isBackground": false
+		}
+	]
+}

@@ -1,4 +1,4 @@
-# Student Management System (SMS)
+# Northstar Student Management System
 
 Angular 20 frontend and Laravel 12 API implementing the supplied Figma Make student management prototype. The Northstar visual language and primary views are retained: administrator sign in, dashboard, student directory, enrollment and editing, student profile, activity log, and account settings. Student and activity data come from the API and SQLite/MySQL database.
 
